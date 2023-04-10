@@ -24,10 +24,9 @@ const StateExc4 = () => {
   return (
     <>
       {cartItems.items.map((item) => (
-        <aside>
+        <aside key={item.id}>
           <button
             className="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
-            key={item.id}
             onClick={() => handleClick(item.id)}
           >
             {item.title} ({item.quantity})
