@@ -12,6 +12,7 @@ import StateExc1 from "./components/StateExc1";
 import StateExc2 from "./components/StateExc2";
 import StateExc3 from "./components/StateExc3";
 import StateExc4 from "./components/StateExc4";
+import Form from "./components/Form";
 
 export default function App() {
   const places: string[] = [
@@ -86,12 +87,13 @@ export default function App() {
       {/* <StateExc1 /> */}
       {/* <StateExc2 /> */}
       {/* <StateExc3 /> */}
-      <StateExc4>
+      {/* <StateExc4>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
         laboriosam, ipsum ab eum soluta nihil explicabo, praesentium numquam
         eaque fuga optio amet sequi consequuntur magni porro, est iusto dolores
         similique?
-      </StateExc4>
+      </StateExc4> */}
+      <Form />
     </main>
   );
 }
