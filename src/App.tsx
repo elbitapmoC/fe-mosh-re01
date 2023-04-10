@@ -8,6 +8,8 @@ import ModifyingArrays from "./components/ModifyingArrays";
 import ModifyingArrayOfObjects from "./components/ModifyingArrayOfObjects";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
+import StateExc1 from "./components/StateExc1";
+import StateExc2 from "./components/StateExc2";
 
 export default function App() {
   const places: string[] = [
@@ -66,19 +68,21 @@ export default function App() {
         items={places}
         heading="Popular Vacation Spots"
         onSelectItem={handleSelection}
-      />
-      <ListGroupAlt items={fruits} heading="Top Exotic Fruits" /> */}
+      /> */}
+      {/* <ListGroupAlt items={fruits} heading="Top Exotic Fruits" /> */}
       {/* <FizzBuzz /> */}
-      {/* 
-      <Alert>
-        Hello <span>World!</span>
-      */}
+
+      {/* <Alert> */}
+      {/* Hello <span>World!</span> */}
+
       {/* <Alert visible={visible} setVisible={handleToggle} /> */}
       {/* <ModifyingObjects /> */}
       {/* <ModifyingArrays /> */}
       {/* <ModifyingArrayOfObjects /> */}
-      <NavBar cartItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} onClear={handleClick} />
+      {/* <NavBar cartItemsCount={cartItems.length} /> */}
+      {/* <Cart cartItems={cartItems} onClear={handleClick} /> */}
+      {/* <StateExc1 /> */}
+      <StateExc2 />
     </main>
   );
 }
