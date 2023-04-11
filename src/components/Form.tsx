@@ -1,6 +1,7 @@
 import React, { FormEvent, useRef } from "react";
 
 const Form = () => {
+  // With this hook we can reference any element in the DOM, but not Input Fields
   const nameRef = useRef<HTMLInputElement>(null);
   const ageRef = useRef<HTMLInputElement>(null);
   const person = {

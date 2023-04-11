@@ -13,6 +13,7 @@ import StateExc2 from "./components/StateExc2";
 import StateExc3 from "./components/StateExc3";
 import StateExc4 from "./components/StateExc4";
 import Form from "./components/Form";
+import FormAlt from "./components/FormAlt";
 
 export default function App() {
   const places: string[] = [
@@ -93,7 +94,8 @@ export default function App() {
         eaque fuga optio amet sequi consequuntur magni porro, est iusto dolores
         similique?
       </StateExc4> */}
-      <Form />
+      {/* <Form /> */}
+      <FormAlt />
     </main>
   );
 }
