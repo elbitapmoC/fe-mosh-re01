@@ -1,6 +1,3 @@
-import FormDescription from "./FormDescription";
-import FormAmount from "./FormAmount";
-import FormCategory from "./FormCategory";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 enum CategoriesEnum {
@@ -15,7 +12,7 @@ interface IFormInput {
 }
 
 const ExpenseTracker = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
 
   return (
