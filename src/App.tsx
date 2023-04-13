@@ -13,7 +13,8 @@ import StateExc2 from "./components/StateExc2";
 import StateExc3 from "./components/StateExc3";
 import StateExc4 from "./components/StateExc4";
 import Form from "./components/Form";
-import ExpenseTracker from "./components/ExpenseTracker";
+import Exc5 from "./components/Exc5";
+import Game from "./components/Game";
 
 export default function App() {
   const places: string[] = [
@@ -66,6 +67,26 @@ export default function App() {
     setCartItems([]);
   };
 
+  const [user, setUser] = useState({
+    firstName: "Ace",
+    lastName: "Ventura",
+    address: {
+      zip: 33312,
+      city: "Broward",
+      street: "2937 W Broward` Blvd",
+    },
+    favorite: {
+      game: "Crash Bandicoot",
+      food: "Orange Apples",
+    },
+    awake: true,
+  });
+
+  const handleSetUser = () => {
+    console.log("From child...clicked handleSetUser");
+    setUser({ ...user, favorite: { ...user.favorite, food: "Peaches" } });
+  };
+
   return (
     <main>
       {/* <ListGroup
@@ -73,13 +94,17 @@ export default function App() {
         heading="Popular Vacation Spots"
         onSelectItem={handleSelection}
       /> */}
+      {/* <Alert visible={visible} setVisible={handleToggle} /> */}
+
+      {/* TODO: NEVER Pass in setter method. */}
+      <Game user={user} setUser={handleSetUser} />
+
       {/* <ListGroupAlt items={fruits} heading="Top Exotic Fruits" /> */}
       {/* <FizzBuzz /> */}
 
       {/* <Alert> */}
       {/* Hello <span>World!</span> */}
 
-      {/* <Alert visible={visible} setVisible={handleToggle} /> */}
       {/* <ModifyingObjects /> */}
       {/* <ModifyingArrays /> */}
       {/* <ModifyingArrayOfObjects /> */}
@@ -95,7 +120,7 @@ export default function App() {
         similique?
       </StateExc4> */}
       {/* <Form /> */}
-      <ExpenseTracker />
+      {/* <Exc5 /> */}
     </main>
   );
 }
