@@ -15,6 +15,7 @@ import StateExc4 from "./components/StateExc4";
 import Form from "./components/Form";
 import Exc5 from "./components/Exc5";
 import Game from "./components/Game";
+import ExpandableButton from "./components/ExpandableButton";
 
 export default function App() {
   const places: string[] = [
@@ -97,7 +98,7 @@ export default function App() {
       {/* <Alert visible={visible} setVisible={handleToggle} /> */}
 
       {/* TODO: NEVER Pass in setter method. */}
-      <Game user={user} setUser={handleSetUser} />
+      {/* <Game user={user} setUser={handleSetUser} /> */}
 
       {/* <ListGroupAlt items={fruits} heading="Top Exotic Fruits" /> */}
       {/* <FizzBuzz /> */}
@@ -121,6 +122,11 @@ export default function App() {
       </StateExc4> */}
       {/* <Form /> */}
       {/* <Exc5 /> */}
+
+      <ExpandableButton
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        length={5}
+      />
     </main>
   );
 }
