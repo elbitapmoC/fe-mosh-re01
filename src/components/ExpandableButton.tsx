@@ -5,8 +5,6 @@ interface Prop {
   length: number;
 }
 
-// TODO: Showing Shortened Text
-// TODO: Showing Full Text
 const ExpandableButton = ({ text, length }: Prop) => {
   const [visible, setVisible] = useState(false);
 
