@@ -45,25 +45,25 @@ const ExpenseForm = ({ onSubmit }: Props) => {
       </div>
       <div className="mb-6">
         <label
-          htmlFor="amount"
+          htmlFor="price"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
         >
-          Amount
+          Price
         </label>
         <input
           type="number"
-          id="amount"
+          id="price"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          {...register("amount", {
+          {...register("price", {
             valueAsNumber: true,
             required: true,
             min: 1,
             max: 1000,
           })}
         />
-        {errors.amount && (
+        {errors.price && (
           <p className="text-red-500 mt-2">
-            Amount is required & must be greater than 0.
+            Price is required & must be greater than 0.
           </p>
         )}
       </div>

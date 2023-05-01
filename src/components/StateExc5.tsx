@@ -12,8 +12,8 @@ enum CategoriesEnum {
 interface IFormInput {
   id: string;
   description: string;
-  amount: number;
-  categories: CategoriesEnum;
+  price: number;
+  category: CategoriesEnum;
 }
 
 const StateExc5 = () => {
@@ -21,20 +21,20 @@ const StateExc5 = () => {
     {
       id: `${crypto.randomUUID()}`,
       description: "PS5",
-      amount: 600,
-      categories: CategoriesEnum.entertainment,
+      price: 600,
+      category: CategoriesEnum.entertainment,
     },
     {
       id: `${crypto.randomUUID()}`,
       description: "Nama J2 Juicer",
-      amount: 500,
-      categories: CategoriesEnum.utilities,
+      price: 500,
+      category: CategoriesEnum.utilities,
     },
     {
       id: `${crypto.randomUUID()}`,
       description: "Watermelon (seeded)",
-      amount: 7,
-      categories: CategoriesEnum.groceries,
+      price: 7,
+      category: CategoriesEnum.groceries,
     },
   ]);
 

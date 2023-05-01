@@ -9,8 +9,8 @@ enum CategoriesEnum {
 interface Expense {
   id: string;
   description: string;
-  amount: number;
-  categories: CategoriesEnum;
+  price: number;
+  category: CategoriesEnum;
 }
 
 interface Prop {
@@ -19,7 +19,8 @@ interface Prop {
 }
 
 const ExpensesList = ({ expenses, onDelete }: Prop) => {
-  console.log(expenses);
+  console.log("expenses: ", expenses);
+
   return (
     <div className="mt-20">
       <div className="relative overflow-x-auto">
@@ -42,38 +43,36 @@ const ExpensesList = ({ expenses, onDelete }: Prop) => {
             </tr>
           </thead>
           <tbody>
-            {expenses.map(
-              ({ id, description, amount, categories }: Expense) => (
-                <tr
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                  key={id}
+            {expenses.map(({ id, description, price, category }: Expense) => (
+              <tr
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                key={id}
+              >
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  {description}
+                </th>
+                <td className="px-6 py-4">{price}</td>
+                <td className="px-6 py-4">{category}</td>
+                <td className="px-6 py-4">
+                  <button
+                    className="flex align-center items-center bg-red-600 px-4 py-2"
+                    onClick={() => onDelete(id)}
                   >
-                    {description}
-                  </th>
-                  <td className="px-6 py-4">{amount}</td>
-                  <td className="px-6 py-4">{categories}</td>
-                  <td className="px-6 py-4">
-                    <button
-                      className="flex align-center items-center bg-red-600 px-4 py-2"
-                      onClick={() => onDelete(id)}
-                    >
-                      <BsTrash size={15} color="white" />{" "}
-                      <span className="pl-2 text-white">Delete</span>
-                    </button>
-                  </td>
-                </tr>
-              )
-            )}
+                    <BsTrash size={15} color="white" />
+                    <span className="pl-2 text-white">Delete</span>
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
           <tfoot className="text-xs uppercase bg-gray-800 text-white outline outline-offset-2 outline-1">
             <tr>
               <th className="px-6 py-3">Total:</th>
               <td>
-                {expenses.reduce((acc, expenses) => expenses.amount + acc, 0)}
+                {expenses.reduce((acc, expenses) => expenses.price + acc, 0)}
               </td>
               <td></td>
               <td></td>
