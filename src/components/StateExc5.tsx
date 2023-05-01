@@ -17,6 +17,7 @@ interface IFormInput {
 }
 
 const StateExc5 = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [expenses, setExpenses] = useState([
     {
       id: `${crypto.randomUUID()}`,
@@ -42,12 +43,19 @@ const StateExc5 = () => {
     setExpenses([...expenses, data]);
   };
 
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses;
+
   return (
     <>
       <ExpenseForm onSubmit={onSubmit} />
-      {/* <ExpenseFilter /> */}
+
+      <ExpenseFilter
+        onSelectCategory={(category) => setSelectedCategory(category)}
+      />
       <ExpensesList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) => {
           setExpenses(expenses.filter((e) => e.id != id));
         }}

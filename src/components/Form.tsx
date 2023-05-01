@@ -11,7 +11,7 @@ const Form = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (nameRef.current !== null) {
-      // We get issues here b/c TS compiler doesn't know we're referencing an HTML input element.
+      // We get issues here b/c TS compiler doesn't know we're referencing an HTML input element.ƒ
       // To fix (look at line 5)
       person.name = nameRef.current.value;
     }
