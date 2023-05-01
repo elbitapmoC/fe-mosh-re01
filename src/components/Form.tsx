@@ -18,7 +18,6 @@ const Form = () => {
     if (ageRef.current !== null) {
       person.age = parseInt(ageRef.current.value);
     }
-    console.log(person);
   };
 
   return (

@@ -3,38 +3,23 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import categories from "../categories";
 
-const schema = z.object({
-  description: z
-    .string()
-    .min(3, { message: "Description should be at least 3 characters." })
-    .max(50),
-  amount: z
-    .number({ invalid_type_error: "Amount is required." })
-    .min(0.01)
-    .max(100_000),
-  category: z.enum(categories, {
-    errorMap: () => ({ message: "Category is required." }),
-  }),
-});
-
-type ExpenseFormData = z.infer<typeof schema>;
-
 interface Props {
-  onSubmit: (data: ExpenseFormData) => void;
+  onSubmit: (data: any) => void;
 }
 
 const ExpenseForm = ({ onSubmit }: Props) => {
   const {
     register,
-    handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ExpenseFormData>({ resolver: zodResolver(schema) });
+    handleSubmit,
+  } = useForm();
 
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        onSubmit(data);
+        let id: string = crypto.randomUUID();
+        onSubmit({ id, ...data });
         reset();
       })}
     >
@@ -66,8 +51,6 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           Amount
         </label>
         <input
-          min={1}
-          max={1000}
           type="number"
           id="amount"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -97,7 +80,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           {...register("category", { required: true })}
         >
           <option value="">Pick one</option>
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <option key={category} value={category}>
               {category}
             </option>

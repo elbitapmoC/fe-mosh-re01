@@ -10,33 +10,37 @@ enum CategoriesEnum {
 }
 
 interface IFormInput {
-  id: number;
+  id: string;
   description: string;
   amount: number;
   categories: CategoriesEnum;
 }
 
-const Exc5 = () => {
+const StateExc5 = () => {
   const [expenses, setExpenses] = useState([
     {
-      id: 1,
+      id: `${crypto.randomUUID()}`,
       description: "PS5",
       amount: 600,
       categories: CategoriesEnum.entertainment,
     },
     {
-      id: 2,
+      id: `${crypto.randomUUID()}`,
       description: "Nama J2 Juicer",
       amount: 500,
       categories: CategoriesEnum.utilities,
     },
     {
-      id: 3,
+      id: `${crypto.randomUUID()}`,
       description: "Watermelon (seeded)",
       amount: 7,
       categories: CategoriesEnum.groceries,
     },
   ]);
+
+  const onSubmit = (data: IFormInput) => {
+    setExpenses([...expenses, data]);
+  };
 
   return (
     <>
@@ -52,4 +56,4 @@ const Exc5 = () => {
   );
 };
 
-export default Exc5;
+export default StateExc5;

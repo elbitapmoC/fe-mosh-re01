@@ -1,4 +1,4 @@
-import { BsTrash } from "react-icons/bs";
+import { BsTrash, BsXLg } from "react-icons/bs";
 
 enum CategoriesEnum {
   groceries = "Groceries",
@@ -7,7 +7,7 @@ enum CategoriesEnum {
 }
 
 interface Expense {
-  id: number;
+  id: string;
   description: string;
   amount: number;
   categories: CategoriesEnum;
@@ -15,7 +15,7 @@ interface Expense {
 
 interface Prop {
   expenses: Expense[];
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 }
 
 const ExpensesList = ({ expenses, onDelete }: Prop) => {

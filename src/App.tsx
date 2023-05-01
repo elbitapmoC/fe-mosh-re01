@@ -13,7 +13,7 @@ import StateExc2 from "./components/StateExc2";
 import StateExc3 from "./components/StateExc3";
 import StateExc4 from "./components/StateExc4";
 import Form from "./components/Form";
-import Exc5 from "./components/Exc5";
+import StateExc5 from "./components/StateExc5";
 import Game from "./components/Game";
 import ExpandableButton from "./components/ExpandableButton";
 
@@ -121,12 +121,7 @@ export default function App() {
         similique?
       </StateExc4> */}
       {/* <Form /> */}
-      {/* <Exc5 /> */}
-
-      <ExpandableButton
-        text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        length={5}
-      />
+      <StateExc5 />
     </main>
   );
 }
