@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Alert from "./components/Alert";
 import FizzBuzz from "./components/FizzBuzz";
 import ListGroup from "./components/ListGroup";
@@ -16,6 +16,9 @@ import Form from "./components/Form";
 import StateExc5 from "./components/StateExc5";
 import Game from "./components/Game";
 import ExpandableButton from "./components/ExpandableButton";
+import UseEffect from "./components/UseEffect";
+import ProductList from "./components/ProductList";
+import FetchingData from "./components/FetchingData";
 
 export default function App() {
   const places: string[] = [
@@ -88,6 +91,10 @@ export default function App() {
     setUser({ ...user, favorite: { ...user.favorite, food: "Peaches" } });
   };
 
+  const [option, setOption] = useState("");
+
+  useEffect(() => {});
+
   return (
     <main>
       {/* <ListGroup
@@ -95,7 +102,7 @@ export default function App() {
         heading="Popular Vacation Spots"
         onSelectItem={handleSelection}
       /> */}
-      {/* <Alert visible={visible} setVisible={handleToggle} /> */}
+      <Alert visible={visible} setVisible={handleToggle} />
 
       {/* TODO: NEVER Pass in setter method. */}
       {/* <Game user={user} setUser={handleSetUser} /> */}
@@ -121,7 +128,22 @@ export default function App() {
         similique?
       </StateExc4> */}
       {/* <Form /> */}
-      <StateExc5 />
+      {/* <StateExc5 /> */}
+      {/* <UseEffect /> */}
+      {/* 
+      <select
+        onChange={(e) => {
+          setOption(e.target.value);
+        }}
+      >
+        <option value="">Pick an option</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <ProductList option={option} /> 
+      */}
+      <FetchingData />
     </main>
   );
 }

@@ -13,6 +13,7 @@ const ExpenseFilter = ({ onSelectCategory }: Props) => {
           onSelectCategory(e.target.value);
         }}
       >
+        <option value="">All categories</option>
         {categories.map((category) => (
           <option key={category} value={category}>
             {category}
