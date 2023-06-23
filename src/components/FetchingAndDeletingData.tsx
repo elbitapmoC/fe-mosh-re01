@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 
 interface User {
   address: {
