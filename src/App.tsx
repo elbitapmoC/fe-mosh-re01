@@ -18,7 +18,7 @@ import Game from "./components/Game";
 import ExpandableButton from "./components/ExpandableButton";
 import UseEffect from "./components/UseEffect";
 import ProductList from "./components/ProductList";
-import FetchingData from "./components/FetchingData";
+import FetchingAndDeletingData from "./components/FetchingAndDeletingData";
 
 export default function App() {
   const places: string[] = [
@@ -102,7 +102,7 @@ export default function App() {
         heading="Popular Vacation Spots"
         onSelectItem={handleSelection}
       /> */}
-      <Alert visible={visible} setVisible={handleToggle} />
+      {/* <Alert visible={visible} setVisible={handleToggle} /> */}
 
       {/* TODO: NEVER Pass in setter method. */}
       {/* <Game user={user} setUser={handleSetUser} /> */}
@@ -143,7 +143,7 @@ export default function App() {
       </select>
       <ProductList option={option} /> 
       */}
-      <FetchingData />
+      <FetchingAndDeletingData />
     </main>
   );
 }
